@@ -1,0 +1,106 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "0e5d6b86-b4ab-48f5-99e3-498e1d794c7e": {
+        "id": "0e5d6b86-b4ab-48f5-99e3-498e1d794c7e",
+        "parent": null,
+        "name": "Animal-reserch",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "05f5966e-5765-4082-bd51-8a566eb384f5"
+        ],
+        "isRemovable": false,
+        "filePath": "Animal-reserch"
+      },
+      "05f5966e-5765-4082-bd51-8a566eb384f5": {
+        "id": "05f5966e-5765-4082-bd51-8a566eb384f5",
+        "parent": "0e5d6b86-b4ab-48f5-99e3-498e1d794c7e",
+        "name": "lambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "Animal-reserch/lambda.js",
+        "code": "exports.handler = function(event, context, callback) {\n   console.log(JSON.stringify(event, null, 2)) ;\n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": [
+          {
+            "resourceName": "s3bucketkeshan",
+            "config": {
+              "type": "s3:ObjectCreated:*",
+              "keyPrefix": "",
+              "keySuffix": ""
+            }
+          }
+        ],
+        "testCases": {
+          "9fe260b8-ba62-4906-ac96-964fad2f109b": {
+            "id": "9fe260b8-ba62-4906-ac96-964fad2f109b",
+            "name": "event1",
+            "functionId": "05f5966e-5765-4082-bd51-8a566eb384f5",
+            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
+          }
+        }
+      }
+    },
+    "deletedFiles": [],
+    "rootNode": "0e5d6b86-b4ab-48f5-99e3-498e1d794c7e",
+    "openFiles": [
+      "05f5966e-5765-4082-bd51-8a566eb384f5"
+    ],
+    "currentFileId": "05f5966e-5765-4082-bd51-8a566eb384f5",
+    "resources": {
+      "s3bucketkeshan": {
+        "name": "s3bucketkeshan",
+        "type": "S3",
+        "config": {
+          "mode": 1,
+          "bucket": {
+            "region": "us-east-1",
+            "name": "bucketkeshan"
+          }
+        }
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": {}
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {}
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "Animal-reserch",
+    "projectDescription": "write a artical ",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1573109496704
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "Animal-reserch",
+      "url": "https://github.com/KeshanNIM/Animal-reserch"
+    }
+  }
+}
